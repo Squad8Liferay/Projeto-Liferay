@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Evento</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="criarevento.css">
     <script type="text/javascript" src="editar-imagem.js" defer></script>
     <script type="text/javascript" src="calendario.js"></script>
 
@@ -51,14 +51,14 @@
                 <label class="alter-label" for="image-field">EDITAR IMAGEM</label>
             </div>   
         </form><!--New-Event-->
-    
-        <div class="text-event">
+        <!--Editar Textos-->
+        <form class="text-event">
             <h2 class="subtitle">Nome do Evento</h2>
-            <p class="event-name">Programação básica em java</p>
+            <input class="event-name" type="text" placeholder="Digite o nome do evento" maxlength="100" minlength="5">
 
             <h2 class="subtitle">Descrição do evento</h2>
-            <p class="event-description">Neste curso você aprenderá o que realmente é a programação orientada a objetos e os conceitos essenciais para você desenvolver suas próprias aplicações em Java. Este curso é fortemente baseado no paradigma de programação orientada a objetos, possibilitando alavancar o seu aprendizado para outras linguagens orientadas...</p>
-        </div><!--text-event-->
+            <textarea class="event-description" name="" id="" cols="30" rows="10" placeholder="Descreva seu evento" maxlength="300" minlength="5"></textarea>
+        </form><!--text-event-->
 
         <div class="conteudo">
             <div class="calendario">
