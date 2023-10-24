@@ -62,14 +62,26 @@
 
         <div class="conteudo">
             <div class="calendario">
-                <header>
-                    <h2 id="mes">Abril</h2>
-                    <a class="btn-ant" id="btn_ant"></a>
-                    <a class="btn-pro" id="btn_prev"></a>
+                <header class="month">
+                    <img class="Google" src="Google Calendar.png" alt="">
+                    <a class="btn-ant" id="btn_ant">
+                        <img class="chevron-left-right" src="Chevron Left.png" alt="">
+                    </a>
+                    
+                    <h2 class="choose-month" id="mes">Abril</h2>
+                    <h2 class="choose-month">de</h2>
+                    <h2 class="choose-month" id="ano"></h2>
+                    <a class="btn-pro" id="btn_prev">
+                        <img class="chevron-left-right" src="Chevron Right.png" alt="">
+                    </a>
+                    
+                    <img class="Google" src="Google Calendar.png" alt="">
+                    
                 </header>
+                <hr class="line">
                 <table>
                     <thead>
-                        <tr>
+                        <tr class="Week-Days">
                             <td>Dom</td>
                             <td>Seg</td>
                             <td>Ter</td>
@@ -80,7 +92,7 @@
                         </tr>
                     </thead>
                     <tbody id="dias">
-                        <tr>
+                        <tr class="Month-Days">
                             <td>1</td>
                             <td>2</td>
                             <td>3</td>
@@ -89,7 +101,7 @@
                             <td>6</td>
                             <td>7</td>
                         </tr>
-                        <tr>
+                        <tr class="Month-Days">
                             <td>1</td>
                             <td>2</td>
                             <td>3</td>
@@ -98,7 +110,7 @@
                             <td>6</td>
                             <td>7</td>
                         </tr>
-                        <tr>
+                        <tr class="Month-Days">
                             <td>1</td>
                             <td>2</td>
                             <td>3</td>
@@ -107,7 +119,7 @@
                             <td>6</td>
                             <td>7</td>
                         </tr>
-                        <tr>
+                        <tr class="Month-Days">
                             <td>1</td>
                             <td>2</td>
                             <td>3</td>
@@ -116,7 +128,7 @@
                             <td>6</td>
                             <td>7</td>
                         </tr>
-                        <tr>
+                        <tr class="Month-Days">
                             <td>1</td>
                             <td>2</td>
                             <td>3</td>
@@ -125,7 +137,7 @@
                             <td>6</td>
                             <td>7</td>
                         </tr>
-                        <tr>
+                        <tr class="Month-Days">
                             <td>1</td>
                             <td>2</td>
                             <td>3</td>
@@ -136,9 +148,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <footer>
-                    <h2 id="ano"></h2>
-                </footer>
+                
             </div><!--calendario-->
         </div><!--conteudo-->
     </div><!--geral-->    

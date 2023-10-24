@@ -1,10 +1,6 @@
-/*Editar Imagem*/
-
-
-
 /*Calendário*/
 document.addEventListener('DOMContentLoaded',function () {
-    const monthsBR = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+    const monthsBR = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
     const tableDays = document.getElementById('dias');
     function GetDaysCalendar(mes,ano){
         document.getElementById('mes').innerHTML = monthsBR[mes];

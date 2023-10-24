@@ -168,12 +168,13 @@ nav {
     /*Botão*/
     & #image-field{
         position:absolute;
-        display: none;
+        /*display: none;*/
         margin: 0 auto;
         cursor: pointer;
         width: 339px;
         height: 194.436px;
         opacity: 0;
+        margin-left: -340px;
     }
 }
 
@@ -254,9 +255,9 @@ nav {
 
 /*Calendário*/
 .conteudo{
-    left: 50%;
-    /*margin: 0 0 0 -500px;*/
     position: absolute;
+    left: 50%;
+    margin: 0 0 0 -500px;
     width: 500px;
     margin-top: 59px;
     margin-left: 199px;
@@ -266,62 +267,132 @@ nav {
 .calendario{
     text-align: center;
     background-color: #FFFFFF;
+    /*Figma*/
+    display: inline-flex;
+    padding: 8px 16px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+
 
 .conteudo .calendario header {
     position: relative;
 }
 
-h2{
-    margin-top: 20px;
-    font-size: 32px;
+.month {
+    box-sizing: border-box;
+    display: flex;
+    padding: 16px 32px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.Google {
+    width: 62px;
+    height: 57px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    /*background: url(<path-to-image>), lightgray 50% / contain no-repeat;*/
+}
+
+.choose-month{
     text-transform: uppercase;
+    /*Figma*/
+    flex: 1 0 0;
+    color: var(--Gray-3, #828282);
+    text-align: center;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
-.btn-ant,.btn-pro{
-    position: absolute;
-    top: 50%;
-    height: 32px;
-    width: 32px;
-    line-height: 32px;
-    margin-top: -16px;
-    border: 2px solid #cbd1d2;
-    border-radius: 50%;
-    color: #cbd1d2;
-    font-size: 16px;
-    font-weight: bold;
+.btn-ant, .btn-pro{
+    /*Figma*/
+width: 27px;
+height: 20px;
+flex-shrink: 0;
+cursor: pointer;
+/*background: url(<path-to-image>), lightgray 50% / contain no-repeat;*/
 
-}
-
-.btn-ant{
-    left: 80px;
-}
-
-.btn-pro{
-    right: 80px;
 }
 
 .btn-ant:hover,.btn-pro:hover{
+    border-radius: 100px;
     background: #cbd1d2;
     color: #f9f9f9;
 }
 
-.calendario table{
-    margin-top: 20px;
-    border-collapse: collapse;
+.line{
+    width: 355px;
+    height: 1px;
+    box-sizing: border-box;
+    background: #BDBDBD;
 }
 
-.calendario thead{
-    background: white;
-    font-weight: 600;
-    text-transform: uppercase;
+.calendario table{
+    display:inline-table;
+    width: 427px;
+    padding: 4px;
+    flex-direction: column;
+    border-collapse: collapse;
+    
+    justify-content: space-between;
+    /*align-items: center;*/
+    gap: 8px;
+    background: #FFF;
+}
+
+.Week-Days {
+    box-sizing: border-box;
+    display: flex;
+    padding: 8px 32px;
+    justify-content: center;
+    /*align-items: center;*/
+    gap: 11px;
+    align-self: stretch;
+    color: #000000;
+}
+
+.Month-Days {
+    box-sizing: border-box;
+    display: flex;
+    padding: 4px 32px;
+    justify-content: center;
+    /*align-items: center;*/
+    gap: 10px;
+    align-self: stretch;
+}
+
+.calendario tr {
+    box-sizing: border-box;
+    display: flex;
+    padding: 4px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    color: #000000;
 }
 
 .calendario td{
-    border: 1px solid #cbd1d2;
-    height: 71.4px;
-    text-align: center;
-    width: 71.4px;
+    box-sizing: border-box;
+    display: flex;
+    height: 42px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
 }
 
 .calendario tbody td{
@@ -329,11 +400,13 @@ h2{
 }
 
 .calendario tbody td:hover{
+    border-radius: 100px;
     background: rgba(0,173,223,0.8);
     color: #f9f9f9;
 }
 
 .calendario table .dia-atual{
+    border-radius: 100px;
     background: #00addf;
     color: #f9f9f9;
 }
