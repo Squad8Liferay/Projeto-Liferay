@@ -64,12 +64,7 @@ export const AreaHeader = styled.div`
               
         }
 
-        .nav-list {
-            display: flex;
-            margin-top: 15px;
-            gap: 50px;
 
-        }
 
         .nav-link {
             text-decoration: none;
@@ -78,7 +73,7 @@ export const AreaHeader = styled.div`
             color: #FFF;
         }
 
-        .nav-list a:hover{
+        a:hover{
             opacity: 0.7;
         }
 
@@ -112,8 +107,8 @@ export const AreaHeader = styled.div`
                 padding: 0;
                 height: 150px;
                 display: grid;
-                
             }
+
 
             .logo-img-search-box {
                 display: flex;
@@ -121,11 +116,47 @@ export const AreaHeader = styled.div`
     
             }
 
-            .nav-items-btn-user-img {
+
+            .search-text {
                 
+                width: 300px;
+               
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+
+            .nav-bar {
+                
+                width: 425px;
+                padding: 0;
+                height: 150px;
+                display: grid;
+                
+            }
+
+            .nav-items-btn-user-img {
+                max-width: 95%;
+                padding-left: 5px;
+                   
+             }
+
+             .user-img {
+                
+                margin-right: 10px;
+             }
+
+            .search-box {
+                    
+                width: 80%;
+            }
+
+            .nav-items-btn-user-img {
+                width: 100%;
                 align-items: center;
             }
 
+            
             .search-text {
                 
                 width: 300px;
