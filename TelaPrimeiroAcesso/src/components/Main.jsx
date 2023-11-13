@@ -8,7 +8,9 @@ text-align: center;
 /* INICIO CSS PÁGINA ÁREA DE INTERESSES */
 
 .wc-text {
-    
+  width: 100%;
+  text-align: center;
+  align-items: center;
   margin-top: 35px;
 }
 
@@ -252,14 +254,6 @@ input[type="checkbox"]:checked + label img {
 
 
 
-
-
-
-
-
-
-
-
 .card {
   width: 190px;
   background: white;
@@ -318,25 +312,22 @@ input[type="checkbox"]:checked + label img {
 
 
 
-
-
-
-
 /* FIM CSS PÁGINA DE FILTRAR EVENTOS */
 
 
+@media only screen and (max-width: 400px) {
+
+ .container {
+
+  width: 55%;
+ }
+
+ .wc-text {
+  margin-left: 10px;
+ }
+}
 
 
-
-
-
-
-
-
-
-    
-
-    
 
 
 
