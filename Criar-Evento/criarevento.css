@@ -143,15 +143,6 @@ nav {
 
 
 #form-form{
-    /*& .image-upload{
-        box-sizing: border-box;
-        width: 339px;
-        height: 194.436px;
-        flex-shrink: 0;
-        border-radius: 15.151px;
-        background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-        box-shadow: 0px 7.57542px 7.57542px 0px rgba(0, 0, 0, 0.25);
-    }*/
 
     & .image-upload img{
         object-fit: cover;
@@ -165,7 +156,7 @@ nav {
         
     }
 
-    /*Botão*/
+    /*Editar Imagem - Botão*/
     & #image-field{
         position:absolute;
         /*display: none;*/
@@ -304,7 +295,6 @@ nav {
 
 .choose-month{
     text-transform: uppercase;
-    /*Figma*/
     flex: 1 0 0;
     color: var(--Gray-3, #828282);
     text-align: center;
@@ -316,7 +306,6 @@ nav {
 }
 
 .btn-ant, .btn-pro{
-    /*Figma*/
 width: 27px;
 height: 20px;
 flex-shrink: 0;
@@ -443,3 +432,5 @@ cursor: pointer;
 .event.dia-atual:after{
     background: #f9f9f9;
 }
+
+/*Criação de Evento - Botão*/
