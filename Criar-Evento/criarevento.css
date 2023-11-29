@@ -264,6 +264,7 @@ button[name="Logout"]:hover {
     font-size: 14px;
     letter-spacing: 0.28px;
     height: 110px;
+    resize: none;
 }
 
 .event-name, .event-description {
