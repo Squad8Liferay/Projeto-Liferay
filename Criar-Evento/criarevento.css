@@ -1,13 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: #F6F7F9;
+   
     
 }
 
 body {
     width: 100%;
-    
+    background-color: #F6F7F9;
 }
 
 .geral {
@@ -434,3 +434,47 @@ cursor: pointer;
 }
 
 /*Criação de Evento - Botão*/
+
+.div-btn-criar{
+    position: absolute;
+    left: 50%;
+    margin-top: 600px;
+    margin-left: 300px;
+
+}
+
+.btn-criar{
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content:space-around;
+    align-items: center;
+    border: none;
+    width: 271px;
+    height: 58px;
+    background-color: #0B63CE;
+    color: #0B63CE;
+    filter: drop-shadow(0px 10px 35px rgba(111, 126, 201, 0.25));
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 0 0 0;    
+    /*Text*/
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.group-4{
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+/*Footer*/
+
