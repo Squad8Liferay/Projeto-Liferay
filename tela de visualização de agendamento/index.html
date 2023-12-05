@@ -97,22 +97,17 @@
                     <th style="width:20%;">Horário</th>
                     <th style="width:15%;">Editar evento</th>
                 </tr>
-                <tr>
+                <tr data-row-id="1">
                     <td>Java Básico</td>
                     <td>R. dos Arcos, 100 - Poço da Panela, Recife</td>
                     <td>20/12/2023</td>
                     <td>16h 18min</td>
                     <td class="acao-buttons">
+                        
+                        <input type="image" src="img/close.png"class="delete-btn" onclick="excluirLinha(this)" style="max-width:20px; max-height:20px; margin-top: 9px;">
+                        <input type="image" src="img/trash-bin.png"class="delete-btn" onclick="excluirLinha(this)" style="max-width:20px; max-height:20px; margin-top: 9px; margin-left: 10px;">
                         <li><a href='https://www.google.com/'><button type="submit">
-                            <img src="img\close.png" style="max-width:20px; max-height:20px;">
-                          </button></a>
-                        </li>
-                        <li><a href='https://www.google.com/'><button type="submit">
-                            <img src="img\trash-bin.png" style="max-width:20px; max-height:20px;">
-                          </button></a>
-                        </li>
-                        <li><a href='https://www.google.com/'><button type="submit">
-                            <img src="img\pencil.png" style="max-width:20px; max-height:20px;">
+                            <img src="img\pencil.png" style="max-width:20px; max-height:20px; margin-top: 5px;">
                           </button></a>
                         </li>
                     </td>
@@ -123,16 +118,10 @@
                     <td>11/12/2023</td>
                     <td>15h 15min</td>
                     <td class="acao-buttons">
+                        <input type="image" src="img/close.png" class="delete-btn" onclick="excluirLinha(this)"style="max-width:20px; max-height:20px; margin-top: 9px;">
+                        <input type="image" src="img/trash-bin.png" class="delete-btn" onclick="excluirLinha(this)"style="max-width:20px; max-height:20px; margin-top: 9px; margin-left: 10px;">
                         <li><a href='https://www.google.com/'><button type="submit">
-                            <img src="img\close.png" style="max-width:20px; max-height:20px;">
-                          </button></a>
-                        </li>
-                        <li><a href='https://www.google.com/'><button type="submit">
-                            <img src="img\trash-bin.png" style="max-width:20px; max-height:20px;">
-                          </button></a>
-                        </li>
-                        <li><a href='https://www.google.com/'><button type="submit">
-                            <img src="img\pencil.png" style="max-width:20px; max-height:20px;">
+                            <img src="img\pencil.png" style="max-width:20px; max-height:20px; margin-top: 5px;">
                           </button></a>
                         </li>
                        
@@ -140,6 +129,16 @@
                 </tr>
             </table>
         </div>
+        <script>
+            function excluirLinha(botao) {
+                
+                var linha = botao.closest('tr');
+        
+                
+                linha.remove();
+            }
+        </script>
+        
     </main>
 
     <footer>
