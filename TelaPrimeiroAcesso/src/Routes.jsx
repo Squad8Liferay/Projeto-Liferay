@@ -1,26 +1,33 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
-import Home from './pages/Home';
+import Login from './pages/Login';
+import PrimeiroAcesso from './pages/PrimeiroAcesso';
 import Configuracoes from './pages/Configuracoes';
-import FiltrarEvento from './pages/FiltrarEvento';
+import Conquistas from './pages/Conquistas';
 import DescubraEvento from './pages/DescubraEvento';
 import Competencias from './pages/Competencias';
 import Nivelamento from './pages/Nivelamento';
 
 
 
-export default () => {
 
+
+
+const App = () => {
     return (
-                <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route exact path="/Configuracoes" element={<Configuracoes />} />
-                    <Route exact path="/FiltrarEvento" element={<FiltrarEvento />} />
-                    <Route exact path="/DescubraEvento" element={<DescubraEvento />} />
-                    <Route exact path="/Competencias" element={<Competencias />} />
-                    <Route exact path="/Nivelamento" element={<Nivelamento />} />
-                </Routes>
-        
+        <Routes>
+            
+            <Route path="/" element={<Navigate to="/Login" replace />}/>
+            <Route path="/Login" element={<Login />} />
+            <Route path="/PrimeiroAcesso" element={<PrimeiroAcesso />} />
+            <Route path="/Configuracoes" element={<Configuracoes />} />
+            <Route path="/Conquistas" element={<Conquistas />} />
+            <Route path="/DescubraEvento" element={<DescubraEvento />} />
+            <Route path="/Competencias" element={<Competencias />} />
+            <Route path="/Nivelamento" element={<Nivelamento />} />
+        </Routes>
     );
 }
+
+export default App;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Select from "react-select";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { ContainerPage, TittlePage } from "../../components/Main";
 
@@ -29,14 +29,14 @@ const programmingLanguages = [
 ];
 
 const Page = () => {
-  // Armazena competências escolhidas
   const [competencias, setCompetencias] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState([]);
+  const [estaSelecionado, setSelecionado] = useState(false);
   const navigate = useNavigate();
 
   const adicionarCompetencias = (selectedOptions) => {
     setSelectedOptions(selectedOptions);
-    const novasCompetencias = selectedOptions.map(option => {
+    const novasCompetencias = selectedOptions.map((option) => {
       return {
         valor: option.label,
         imagem: obterCaminhoImagem(option.label),
@@ -44,24 +44,34 @@ const Page = () => {
     });
 
     setCompetencias(novasCompetencias);
+    setSelecionado(novasCompetencias.length > 0); // Define como true se houver pelo menos uma competência
   };
 
   const removerCompetencia = (competencia) => {
-    const novasCompetencias = competencias.filter(comp => comp.valor !== competencia.valor);
+    const novasCompetencias = competencias.filter(
+      (comp) => comp.valor !== competencia.valor
+    );
     setCompetencias(novasCompetencias);
 
-    // Atualiza as opções selecionadas no Select
-    const novasOpcoesSelecionadas = selectedOptions.filter(option => option.label !== competencia.valor);
+    const novasOpcoesSelecionadas = selectedOptions.filter(
+      (option) => option.label !== competencia.valor
+    );
     setSelectedOptions(novasOpcoesSelecionadas);
+
+    setSelecionado(novasCompetencias.length > 0); // Define como true se houver pelo menos uma competência
   };
 
   return (
     <ContainerPage>
-
       <TittlePage>
-        <div className="wc-text"><p>Agora escolha <strong>5 competências</strong> técnicas que você possui.<br />
-          Ah! Não se preocupe, depois você poderá adicionar mais competências ao seu perfil ou removê-las na área de configurações.
-        </p>
+        <div className="wc-text">
+          <p>
+            Agora escolha ao menos <strong>uma competência</strong> técnica que
+            você possui para avançar.
+            <br />
+            Ah! Não se preocupe, depois você poderá adicionar mais competências
+            ao seu perfil <br /> ou removê-las na área de configurações.
+          </p>
         </div>
       </TittlePage>
 
@@ -74,7 +84,7 @@ const Page = () => {
                 isMulti
                 options={programmingLanguages}
                 placeholder="Digite ou selecione as tecnologias..."
-                value={selectedOptions} // Define as opções selecionadas
+                value={selectedOptions}
                 onChange={(selectedOptions) => {
                   adicionarCompetencias(selectedOptions);
                 }}
@@ -84,86 +94,101 @@ const Page = () => {
 
           {/* Lista de competências adicionadas */}
           <div id="opcoes-container">
-            <ul id="lista-competencias" style={{ listStyleType: 'none', padding: 0 }}>
+            <ul
+              id="lista-competencias"
+              style={{ listStyleType: "none", padding: 0 }}
+            >
               {competencias.map((competencia, index) => (
                 <div
                   key={index}
                   style={{
-                    position: 'relative',
-                    display: 'inline-block',
-                    margin: '5px',
-                    boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
-                    borderRadius: '16px',
+                    position: "relative",
+                    display: "inline-block",
+                    margin: "5px",
+                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                    borderRadius: "16px",
                   }}
                 >
                   <li
                     style={{
-                      color: 'white',
-                      padding: '5px',
-                      width: '200px',
-                      height: '200px',
-                      position: 'relative',
-                      bottom: '5px',
+                      color: "white",
+                      padding: "5px",
+                      width: "200px",
+                      height: "200px",
+                      position: "relative",
+                      bottom: "5px",
                     }}
                   >
                     {competencia.valor}
                     <img
                       src={competencia.imagem}
                       alt={`Imagem de ${competencia.valor}`}
-                      style={{ width: '150px', height: '150px', display: 'block', margin: '10px auto' }}
-                    />
-                    {/*
-                    <button
-                      type="button"
-                      onClick={() => removerCompetencia(competencia)}
                       style={{
-                        position: 'absolute',
-                        top: 0,
-                        right: 0,
-                        border: 'none',
-                        background: 'none',
-                        cursor: 'pointer',
+                        width: "150px",
+                        height: "150px",
+                        display: "block",
+                        margin: "10px auto",
                       }}
-                    >
-                      <img src="../../../../multiplesign.png" alt="Remover" style={{ width: '15px', height: '15px' }} />
-                    </button> */}
+                    />
                   </li>
                 </div>
               ))}
             </ul>
           </div>
 
-          <div className="box-btn-add">
-            {/* Botão de adicionar competências removido */}
-          </div>
-
+          {/* Botões de ação */}
           <div className="actions">
-            <Link to="/"> <button type="button" className="buttons" id="btnBack"><img src="../../../setaesquerda.png" alt="Seta" />Voltar</button></Link>
-            <button type="submit" className="buttons" id="btnNext" onClick={() => navigate('/Nivelamento', { state: { competencias } })}>
-              Avançar<img src="../../../setadireita.png" alt="Seta" />
+            <Link to="/PrimeiroAcesso">
+              <button type="button" className="buttons" id="btnBack">
+                <img src="../../../setaesquerda.png" alt="Seta" />
+                Voltar
+              </button>
+            </Link>
+
+            <button
+              type="button"
+              className="buttons"
+              id="btnNext"
+              disabled={!estaSelecionado}
+              onClick={() =>
+                navigate("/Nivelamento", { state: { competencias } })
+              }
+            >
+              Avançar
+              <img src="../../../setadireita.png" alt="Seta" />
             </button>
           </div>
         </form>
       </main>
     </ContainerPage>
   );
-}
+};
 
-// Função para obter o caminho da imagem com base na competência
 const obterCaminhoImagem = (competencia) => {
   const imagensFundo = {
-    Java: '../../../../javaimg.png',
-    Python: '../../../../pythonimg.webp',
-    JavaScript: '../../../../javascript.png',
-    React: '../../../../react.png',
-    Angular: '../../../../angularimg.png',
-    TypeScript: '../../../../typescriptimg.png',
-    "C++": '../../../../c++img.png',
-    "C#": '../../../../csharpimg.png',
-    Ruby: '../../../../rubyimg.png',
+    Java: "../../../../javaimg.png",
+    Python: "../../../../pythonimg.webp",
+    JavaScript: "../../../../javascript.png",
+    React: "../../../../react.png",
+    Angular: "../../../../angularimg.png",
+    TypeScript: "../../../../typescriptimg.png",
+    "C++": "../../../../c++img.png",
+    "C#": "../../../../csharpimg.png",
+    Ruby: "../../../../rubyimg.png",
+    Swift: "../../../../Swift.png",
+    PHP: "../../../../php.png",
+    Kotlin: "../../../../kotlin.png",
+    Go: "../../../../golang.png",
+    Rust: "../../../../rust.png",
+    Perl: "../../../../perl.png",
+    Scala: "../../../../scala.png",
+    Haskell: "../../../../haskell.png",
+    Lua: "../../../../lua.png",
+    "Objective-C": "../../../../objectivec.jpg",
+    Matlab: "../../../../matlab.png",
   };
 
-  return `/img/${imagensFundo[competencia] || 'default-background.jpg'}`;
-}
+  return `/img/${imagensFundo[competencia] || "default-background.jpg"}`;
+};
 
 export default Page;
